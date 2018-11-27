@@ -1,0 +1,9 @@
+<form [formGroup]="searchStarWars" (ngSubmit)="onGet()">
+  <select name="searchField" formControlName="searchField" id="searchField" required>
+    <option *ngFor="let search of searchFields" value="{{ search.value }}">{{ search.view }}</option>
+  </select>
+  <input type="text" id="search" formControlName="searchTerm" required>
+  <button type="submit">Submit</button>
+</form>
+
+<p>{{ _result | json }}</p>
